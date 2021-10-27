@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mocosapp/screens/better_player_Screen.dart';
 import 'dart:ui';
-
 import 'package:mocosapp/screens/wellpaper_screen.dart';
 
 void main() {
@@ -50,9 +49,8 @@ class _HomePageState extends State<HomePage> {
                   context,
                   (MaterialPageRoute(
                       builder: (context) => VideoScreenCondision(
-                            videoUrl:
-                                "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-                          ))));
+                          videoUrl:
+                            'https://player.vimeo.com/external/637002089.sd.mp4?s=ecb008559d04e02120528106225d3d8ef12c5fa6&profile_id=164&oauth2_token_id=57447761'))));
             },
           ),
         ),

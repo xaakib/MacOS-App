@@ -1,3 +1,9 @@
+// ignore: file_names
+// ignore: file_names
+// ignore: file_names
+// ignore: file_names
+// ignore: file_names
+// ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:better_player/better_player.dart';
 import 'package:flutter/services.dart';
@@ -23,9 +29,8 @@ class _VideoScreenCondisionState extends State<VideoScreenCondision> {
         BetterPlayerDataSourceType.network, widget.videoUrl);
     _betterPlayerController = BetterPlayerController(
         BetterPlayerConfiguration(
-          showPlaceholderUntilPlay: true,
           autoDispose: true,
-          fullScreenByDefault: true,
+          // fullScreenByDefault: true,
           deviceOrientationsAfterFullScreen: [
             DeviceOrientation.portraitUp,
             DeviceOrientation.portraitDown,
@@ -35,9 +40,13 @@ class _VideoScreenCondisionState extends State<VideoScreenCondision> {
             DeviceOrientation.landscapeRight,
           ],
           controlsConfiguration: BetterPlayerControlsConfiguration(
-            pipMenuIcon: Icons.minimize_outlined,
-            enablePip: true,
-          ),
+              loadingWidget: Container(
+                height: 200,
+                width: double.infinity,
+                color: Colors.red,
+              ),
+              showControlsOnInitialize: false,
+              enableFullscreen: false),
           autoPlay: true,
         ),
         betterPlayerDataSource: betterPlayerDataSource);
@@ -51,11 +60,14 @@ class _VideoScreenCondisionState extends State<VideoScreenCondision> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 200,
-      width: double.infinity,
-      child: BetterPlayer(
-        controller: _betterPlayerController,
+    return Scaffold(
+      appBar: AppBar(),
+      body: Container(
+        height: 200,
+        width: double.infinity,
+        child: BetterPlayer(
+          controller: _betterPlayerController,
+        ),
       ),
     );
   }
