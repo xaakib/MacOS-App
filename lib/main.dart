@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:mocosapp/screens/better_player_Screen.dart';
 import 'dart:ui';
+
+import 'package:mocosapp/screens/wellpaper_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,12 +36,24 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
+      appBar: AppBar(
+        title: Text("Video Player"),
+      ),
       body: Container(
         color: Colors.black,
         child: Center(
           child: ElevatedButton(
             child: Text("Play"),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  (MaterialPageRoute(
+                      builder: (context) => VideoScreenCondision(
+                            videoUrl:
+                                "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+                          ))));
+            },
           ),
         ),
       ),
