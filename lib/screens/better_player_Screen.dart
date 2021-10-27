@@ -29,6 +29,7 @@ class _VideoScreenCondisionState extends State<VideoScreenCondision> {
         BetterPlayerDataSourceType.network, widget.videoUrl);
     _betterPlayerController = BetterPlayerController(
         BetterPlayerConfiguration(
+          fullScreenByDefault: true,
           autoDispose: true,
           // fullScreenByDefault: true,
           deviceOrientationsAfterFullScreen: [
@@ -40,6 +41,13 @@ class _VideoScreenCondisionState extends State<VideoScreenCondision> {
             DeviceOrientation.landscapeRight,
           ],
           controlsConfiguration: BetterPlayerControlsConfiguration(
+              overflowMenuCustomItems: [
+                BetterPlayerOverflowMenuItem(
+                  Icons.account_circle_rounded,
+                  "Custom element",
+                  () => Navigator.pop(context),
+                )
+              ],
               loadingWidget: Container(
                 height: 200,
                 width: double.infinity,

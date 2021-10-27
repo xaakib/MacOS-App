@@ -48,9 +48,10 @@ class _HomePageState extends State<HomePage> {
               Navigator.push(
                   context,
                   (MaterialPageRoute(
-                      builder: (context) => VideoScreenCondision(
-                          videoUrl:
-                            'https://player.vimeo.com/external/637002089.sd.mp4?s=ecb008559d04e02120528106225d3d8ef12c5fa6&profile_id=164&oauth2_token_id=57447761'))));
+                      builder: (context) => WellPaperScreen(
+                          // videoUrl:
+                          //   'https://player.vimeo.com/external/637002089.sd.mp4?s=ecb008559d04e02120528106225d3d8ef12c5fa6&profile_id=164&oauth2_token_id=57447761'
+                          ))));
             },
           ),
         ),
